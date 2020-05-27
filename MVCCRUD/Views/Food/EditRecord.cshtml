@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "EditRecord";
+    Layout = null;
+}
+@model customer
+
+<h2>Edit Food Order in System</h2>
+
+<form action="/Food/EditRecord" method="post">
+    @Html.HiddenFor(model => model.id)
+
+    Food Name: @Html.TextBoxFor(model => model.name) <br /><br />
+    Food Category: @Html.TextBoxFor(model => model.category)<br /><br />
+
+    Food Price: @Html.TextBoxFor(model => model.price)
+    @Html.HiddenFor(model => model.id)
+
+    <input type="submit" value="Update Food" />
+
+
+</form>
+
+<a href="/Food/Index">Go Back</a>
+
+
+

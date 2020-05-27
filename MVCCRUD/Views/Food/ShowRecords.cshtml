@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Show Records";
+    Layout = null;
+}
+@model List<customer>
+
+<h2 >Showing Records in System</h2>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>ID_Food</th>
+        <th>Nmae</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+   @foreach (var item in Model)
+   { <tr>
+
+        <td>@item.id</td>
+        <td>@item.name</td>
+        <td>@item.category</td> 
+        <td>@item.price</td>
+         <td>@Html.ActionLink("Edit", "EditRecord", "Food", new { cid = item.id }, new { })</td>
+
+
+    </tr>
+   }
+    
+
+
+</table>
+<br />
+<a href="/Food/Index">Go Back</a>
+
+
+

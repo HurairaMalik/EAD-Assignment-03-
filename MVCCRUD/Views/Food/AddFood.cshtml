@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "AddFood";
+    Layout = null;
+    
+  
+}
+@model MVCCRUD.Models.Food
+
+<h2>Add Food in System</h2>
+
+<form action="AddFood/Food" method="post">
+
+    Food Numbr   :@Html.TextBoxFor(model => model.id)
+    @Html.ValidationMessageFor(model => model.id, "", new
+    {
+        @class = "text-danger"
+    }) <br /><br />
+    Food Name    :@Html.TextBoxFor(model=>model.name)
+    @Html.ValidationMessageFor(model => model.id, "", new
+    {
+        @class = "text-danger"
+    }) <br /><br />
+    Food Category:@Html.TextBoxFor(model => model.category)
+    @Html.ValidationMessageFor(model => model.id, "", new
+    {
+        @class = "text-danger"
+    })<br /><br />
+    Food Price   :@Html.TextBoxFor(model => model.price)
+    @Html.ValidationMessageFor(model => model.id, "", new
+    {
+        @class = "text-danger"
+    })
+
+
+    <input type="submit" value="Add Food" class="btn-success" />
+
+
+</form>
+
+<a href="/Food/Index">Go Back</a>
+
